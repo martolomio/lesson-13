@@ -34,7 +34,7 @@ public class ServletLogin extends HttpServlet {
 
             request.setAttribute("userEmail", email);
             request.getRequestDispatcher("cadinet.jsp").forward(request, response);
-        }else {
+        }else{
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }

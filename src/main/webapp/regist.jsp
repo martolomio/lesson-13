@@ -12,8 +12,8 @@
 <form action="register" method="post">
     <input name="firstName" type="text" placeholder="First Name"><br>
     <input name="lastName" type="text" placeholder="Last Name"><br>
-    <input name="password" type="text" placeholder="Password"><br>
     <input name="email" type="text" placeholder="Email"><br>
+    <input name="password" type="text" placeholder="Password"><br>
     <p>User</p>
     <input name="access" type="radio" id="user" checked><br>
     <p>Admin</p>

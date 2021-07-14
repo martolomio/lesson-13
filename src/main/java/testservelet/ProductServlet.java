@@ -1,7 +1,9 @@
 package testservelet;
 
 import dao.service.ProductService;
+import dao.service.UserService;
 import dao.service.implService.ProductServiceImpl;
+import dao.service.implService.UserServiceImpl;
 import domain.Product;
 
 import javax.servlet.*;
@@ -11,7 +13,7 @@ import java.io.IOException;
 //@WebServlet(name = "ProductServlet", value = "/ProductServlet")
 public class ProductServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private ProductService productService = new ProductServiceImpl();
+    private ProductService productService = ProductServiceImpl.getProductService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

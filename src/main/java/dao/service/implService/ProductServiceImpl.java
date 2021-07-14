@@ -1,35 +1,42 @@
 package dao.service.implService;
-
-import dao.BucketDao;
 import dao.ProductDao;
-import dao.impl.BucketDaoImpl;
 import dao.impl.ProductDaoImpl;
 import dao.service.ProductService;
 import domain.Product;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
+    private static Logger LOGGER= Logger.getLogger(ProductServiceImpl.class);
+    private static ProductServiceImpl productServiceImpl;
     private ProductDao productDao;
 
-    public  ProductServiceImpl(){
+    private ProductServiceImpl(){
         try {
             productDao = new ProductDaoImpl();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (InvocationTargetException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (InstantiationException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
+    }
+
+    public static ProductService getProductService() {
+        if (productServiceImpl == null) {
+            productServiceImpl = new ProductServiceImpl();
+        }
+        return productServiceImpl;
     }
 
     @Override

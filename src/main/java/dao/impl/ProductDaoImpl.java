@@ -3,6 +3,7 @@ package dao.impl;
 import dao.ProductDao;
 import domain.Bucket;
 import domain.Product;
+import org.apache.log4j.Logger;
 import utils.ConnectionUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -16,6 +17,8 @@ public class ProductDaoImpl implements ProductDao {
     private static  String READ_BY_ID= "select * from product where id =?";
     private static  String UPDATE_BY_ID= "update product set name=?, description=?, prise=? where id=?";
     private static  String DELETE_BY_ID= "delete from product where id=?";
+
+    private static Logger LOGGER= Logger.getLogger(ProductDaoImpl.class);
 
     private Connection connection ;
     private PreparedStatement preparedStatement;
@@ -36,7 +39,7 @@ public class ProductDaoImpl implements ProductDao {
             rs.next();
             product.setId(rs.getInt(1));
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+           LOGGER.error(throwables);
         }
         return product;
     }
@@ -58,7 +61,7 @@ public class ProductDaoImpl implements ProductDao {
             product = new Product(productId,name,description,price);
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
         return product;
     }
@@ -72,7 +75,7 @@ public class ProductDaoImpl implements ProductDao {
             preparedStatement.setDouble(3, product.getPrice());
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
         return  product;
     }
@@ -84,7 +87,7 @@ public class ProductDaoImpl implements ProductDao {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
     }
 
@@ -103,7 +106,7 @@ public class ProductDaoImpl implements ProductDao {
                 productRecords.add(new Product(productId,name,description,price));
             }
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
         return productRecords;
     }

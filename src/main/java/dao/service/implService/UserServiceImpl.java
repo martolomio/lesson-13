@@ -4,29 +4,32 @@ import dao.UserDoa;
 import dao.impl.UserDaoImpl;
 import dao.service.UserService;
 import domain.User;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
+    private static Logger LOGGER= Logger.getLogger(ProductServiceImpl.class);
     private UserDoa userDao;
     private  static UserServiceImpl userServiceImpl;
-    public  UserServiceImpl(){
+
+    private  UserServiceImpl(){
         try {
             userDao = new UserDaoImpl();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (InvocationTargetException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (InstantiationException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
@@ -65,4 +68,5 @@ public class UserServiceImpl implements UserService {
     public User getUserByEmail(String email) {
         return userDao.getUserByEmail(email);
     }
+
 }

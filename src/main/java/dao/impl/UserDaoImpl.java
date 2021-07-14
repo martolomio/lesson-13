@@ -3,6 +3,7 @@ package dao.impl;
 import dao.UserDoa;
 import domain.Product;
 import domain.User;
+import org.apache.log4j.Logger;
 import utils.ConnectionUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -22,6 +23,7 @@ public class UserDaoImpl implements UserDoa {
     private static  String DELETE_BY_ID= "delete from client where id=?";
     private static  String READ_BY_EMAIL= "select * from client where email =?";
 
+    private static Logger LOGGER= Logger.getLogger(UserDaoImpl.class);
 
     private Connection connection ;
     private PreparedStatement preparedStatement;
@@ -44,7 +46,7 @@ public class UserDaoImpl implements UserDoa {
             rs.next();
             user.setId(rs.getInt(1));
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
         return  user;
     }
@@ -69,7 +71,7 @@ public class UserDaoImpl implements UserDoa {
             user = new User(userId,firstName,lastName,email, password, access);
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
         return user;
     }
@@ -85,7 +87,7 @@ public class UserDaoImpl implements UserDoa {
         preparedStatement.setString(5, user.getAccess());
         preparedStatement.executeUpdate();
     } catch (SQLException throwables) {
-        throwables.printStackTrace();
+            LOGGER.error(throwables);
     }
         return user;
     }
@@ -97,7 +99,7 @@ public class UserDaoImpl implements UserDoa {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
 
     }
@@ -119,7 +121,7 @@ public class UserDaoImpl implements UserDoa {
                 userRecords.add(new User(userId,firstName,lastName,email, password, access));
             }
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
         return userRecords;
     }
@@ -141,7 +143,7 @@ public class UserDaoImpl implements UserDoa {
             String access = resultSet.getString("access");
             user=(new User(userId,firstName,lastName,email, password, access));
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         }
         return user;
     }
