@@ -4,30 +4,39 @@ import dao.BucketDao;
 import dao.impl.BucketDaoImpl;
 import dao.service.BucketService;
 import domain.Bucket;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class BucketServiceImpl implements BucketService {
+    private static Logger LOGGER= Logger.getLogger(BucketServiceImpl.class);
     private BucketDao bucketDao;
+    private static BucketServiceImpl bucketServiceImpl;
 
-    public  BucketServiceImpl(){
+    private BucketServiceImpl(){
         try {
             bucketDao = new BucketDaoImpl();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            LOGGER.error(throwables);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (InvocationTargetException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (InstantiationException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
+    }
+    public static BucketService getBucketService() {
+        if (bucketServiceImpl == null) {
+            bucketServiceImpl = new BucketServiceImpl();
+        }
+        return bucketServiceImpl;
     }
 
 

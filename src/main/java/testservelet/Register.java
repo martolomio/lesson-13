@@ -5,18 +5,14 @@ import dao.service.implService.UserServiceImpl;
 import domain.User;
 import domain.UserAccess;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 
 public class Register extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private UserService userService = new UserServiceImpl();
+    private UserService userService = UserServiceImpl.getUserService();
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,9 +55,9 @@ public class Register extends HttpServlet {
 //        session.setAttribute("userEmail", email);
 //        session.setAttribute("userFirstname", firstName);
 
-        response.setContentType("text/plain");
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write("Success");
+//        response.setContentType("text/plain");
+//        response.setCharacterEncoding("UTF-8");
+//        response.getWriter().write("Success");
         request.getRequestDispatcher("cadinet.jsp").forward(request, response);
 	
 	}

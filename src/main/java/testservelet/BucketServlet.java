@@ -4,6 +4,7 @@ import dao.service.BucketService;
 import dao.service.ProductService;
 import dao.service.implService.BucketServiceImpl;
 import dao.service.implService.ProductServiceImpl;
+import domain.Bucket;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,7 +15,7 @@ import java.sql.Date;
 @WebServlet(name = "BucketServlet", value = "/BucketServlet")
 public class BucketServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private BucketService bucketService = new BucketServiceImpl();
+    private BucketService bucketService = BucketServiceImpl.getBucketService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

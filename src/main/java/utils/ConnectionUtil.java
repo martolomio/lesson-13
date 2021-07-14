@@ -1,5 +1,7 @@
 package utils;
 
+import org.apache.log4j.xml.DOMConfigurator;
+
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +14,7 @@ public class ConnectionUtil {
 
 
     public  static Connection openConnection() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, NoSuchMethodException, InvocationTargetException {
-
+        DOMConfigurator.configure("loggerConfig.xml");
         Class.forName ("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
         return DriverManager.getConnection (URL, USER_NAME,USER_PASSWORD);
     }
