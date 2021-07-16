@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="lesson-05:war exploded">
+  <artifact type="exploded-war" name="lesson-07:war exploded">
     <output-path>$PROJECT_DIR$/target/lesson-07_JA-0.0.1-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
