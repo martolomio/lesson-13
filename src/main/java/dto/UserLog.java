@@ -1,6 +1,6 @@
-package domain;
+package dto;
 
 public class UserLog {
     public String email;
-    public String pass;
+    public String passwordUrl;
 }
