@@ -1,16 +1,12 @@
-package testservelet;
+package servlet;
 
 import dao.service.BucketService;
-import dao.service.ProductService;
 import dao.service.implService.BucketServiceImpl;
-import dao.service.implService.ProductServiceImpl;
-import domain.Bucket;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.Date;
 
 @WebServlet(name = "BucketServlet", value = "/BucketServlet")
 public class BucketServlet extends HttpServlet {
