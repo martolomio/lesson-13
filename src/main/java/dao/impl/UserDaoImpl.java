@@ -58,7 +58,7 @@ public class UserDaoImpl implements UserDoa {
             ResultSet result = preparedStatement.executeQuery();
             result.next();
 
-            Integer userId = result.getInt("id");
+            int userId = result.getInt("id");
             String firstName = result.getString("first_name");
             String lastName = result.getString("last_name");
             String email = result.getString("email");
