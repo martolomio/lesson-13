@@ -4,21 +4,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-          crossorigin="anonymous">
+    <%--    <link rel="stylesheet"--%>
+    <%--          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"--%>
+    <%--          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"--%>
+    <%--          crossorigin="anonymous">--%>
     <%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"--%>
     <%--          rel="stylesheet"--%>
     <%--          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"--%>
     <%--          crossorigin="anonymous">--%>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+          crossorigin="anonymous">
     <meta charset="utf-8">
     <title>Cabinet</title>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<h1>Welcome to the cabinet ${userEmail} </h1>
 
+<h1>Hello ${userFirstName}!</h1>
+<h2>Welcome to your personal cabinet ${userEmail}</h2>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="productCards"></div>
+    </div>
+</div>
 <jsp:include page="footer.jsp"></jsp:include>
 
 <%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"--%>
@@ -58,6 +75,6 @@
 <%--<script--%>
 <%--        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>--%>
 <script src="js/header.js"></script>
-
+<script src="js/cabinet.js"></script>
 </body>
 </html>

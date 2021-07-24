@@ -4,14 +4,17 @@ import com.google.gson.Gson;
 import dao.service.ProductService;
 import dao.service.implService.ProductServiceImpl;
 import domain.Product;
+import org.apache.log4j.Logger;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet("/product")
 public class ProductController extends HttpServlet {
+    private static Logger LOGGER = Logger.getLogger(ProductServiceImpl.class);
     private static final long serialVersionUID = 1L;
     private ProductService productService = ProductServiceImpl.getProductService();
 
@@ -40,7 +43,16 @@ public class ProductController extends HttpServlet {
     //to get resource(product)
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().append("Served at : ").append(request.getContextPath());
+        try {
+            String productId = request.getParameter("id");
+            Product product = productService.read(Integer.parseInt(productId));
+
+            request.setAttribute("product", product);
+            request.getRequestDispatcher("singleProduct.jsp").forward(request, response);
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        }
+
     }
 
     //to update resource(product)

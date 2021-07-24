@@ -1,17 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="lesson-08:war exploded">
+  <artifact type="exploded-war" name="lesson-09:war exploded">
     <output-path>$PROJECT_DIR$/target/lesson-07_JA-0.0.1-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>lesson-08</module>
+        <module>lesson-09</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="lesson-08" />
+          <element id="module-output" name="lesson-09" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: junit:junit:4.12" />
@@ -30,7 +30,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/lesson-07_JA-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="lesson-08/web/Web" />
+      <element id="javaee-facet-resources" facet="lesson-09/web/Web" />
     </root>
   </artifact>
 </component>
