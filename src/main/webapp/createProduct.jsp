@@ -22,12 +22,14 @@
     <%--          crossorigin="anonymous">--%>
     <link rel="stylesheet" href="css/createProduct.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 <h1>Welcome to the cabinet ${userEmail}</h1>
+
 <jsp:include page="header.jsp"></jsp:include>
 
-<div class="container-fluid" style="width: 300px;
+<div class="container-fluid createPr" style="width: 300px;
     background-color: cadetblue;
     border-radius: 9px;
     padding-left: 60px;

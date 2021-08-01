@@ -26,12 +26,8 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-
-<h1>Hello ${userFirstName}!</h1>
-<h2>Welcome to your personal cabinet ${userEmail}</h2>
-
-
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: snow !important;display: flex;
+    justify-content: center;">
     <div class="row">
         <div id="productCards"></div>
     </div>

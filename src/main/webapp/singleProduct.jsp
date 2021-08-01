@@ -23,7 +23,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 
-<div class="container-fluid single-product">
+<div class="container-fluid single-product" style="background-color: snow !important;">
     <div class="col">
         <div class="card">
             <div class="card-body">
@@ -65,6 +65,7 @@
         </div>
     </div>
 </div>
+
 
 <jsp:include page="footer.jsp"></jsp:include>
 

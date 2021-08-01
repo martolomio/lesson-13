@@ -7,19 +7,20 @@ public class Bucket {
 
     private  Integer id;
     private  Integer userId;
-    private  Integer productId;
-    private Date puchaseDate;
+    private Integer productId;
+    private Date purchaseDate;
 
-    public Bucket(Integer id, Integer userId, Integer productId, Date puchaseDate) {
+    public Bucket(Integer id, Integer userId, Integer productId, Date purchaseDate) {
         this.id = id;
         this.userId = userId;
         this.productId = productId;
-        this.puchaseDate = puchaseDate;
+        this.purchaseDate = purchaseDate;
     }
-    public Bucket( Integer userId, Integer productId, Date puchaseDate) {
+
+    public Bucket(Integer userId, Integer productId, Date puchaseDate) {
         this.userId = userId;
         this.productId = productId;
-        this.puchaseDate = puchaseDate;
+        this.purchaseDate = puchaseDate;
     }
 
     public Integer getId() {
@@ -46,12 +47,12 @@ public class Bucket {
         this.productId = productId;
     }
 
-    public java.sql.Date getPuchaseDate() {
-        return (java.sql.Date) puchaseDate;
+    public Date getPurchaseDate() {
+        return purchaseDate;
     }
 
-    public void setPuchaseDate(Date puchaseDate) {
-        this.puchaseDate = puchaseDate;
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
     @Override
@@ -59,12 +60,12 @@ public class Bucket {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bucket bucket = (Bucket) o;
-        return Objects.equals(id, bucket.id) && Objects.equals(userId, bucket.userId) && Objects.equals(productId, bucket.productId) && Objects.equals(puchaseDate, bucket.puchaseDate);
+        return Objects.equals(id, bucket.id) && Objects.equals(userId, bucket.userId) && Objects.equals(productId, bucket.productId) && Objects.equals(purchaseDate, bucket.purchaseDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId, productId, puchaseDate);
+        return Objects.hash(id, userId, productId, purchaseDate);
     }
 
     @Override
@@ -73,7 +74,7 @@ public class Bucket {
                 "id=" + id +
                 ", userId=" + userId +
                 ", productId=" + productId +
-                ", puchaseDate=" + puchaseDate +
+                ", puchaseDate=" + purchaseDate +
                 '}';
     }
 }

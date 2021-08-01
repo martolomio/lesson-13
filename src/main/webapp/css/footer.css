@@ -11,9 +11,9 @@ div.new {
     background-color: #3c3d41;
 }
 
-.container-fluid {
+div.container-fluid {
     overflow: hidden;
-    margin-top: 250px;
+    margin-top: 50px;
     background: dimgray;
     color: #627482 !important;
     margin-bottom: 0;

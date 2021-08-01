@@ -24,4 +24,14 @@ $.get("products", function (data) {
 
     $('#productCards').html(cardsContent);
 
+}).done(function () {
+    $.get("user-role", function (data) {
+        if (data !== '') {
+            userAccess = data;
+        }
+    }).done(function () {
+        if (userAccess === 'ADMINISTRATOR') {
+            $('a.productCardElement').hide();
+        }
+    });
 });

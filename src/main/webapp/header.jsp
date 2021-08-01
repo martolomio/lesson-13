@@ -22,7 +22,7 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item create-product-option">
                     <a class="nav-link" href="${pageContext.request.contextPath}/createProduct.jsp">Add Periodical</a>
                 </li>
                 <li class="nav-item">
@@ -44,7 +44,7 @@
             <%--            </ul>--%>
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
-                    <button class="nav-link product-Logout">LogOut</button>
+                    <button class="nav-link product-Logout" style="background-color: lightseagreen">LogOut</button>
                 </li>
             </ul>
         </div>

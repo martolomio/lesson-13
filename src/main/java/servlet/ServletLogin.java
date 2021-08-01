@@ -28,6 +28,7 @@ public class ServletLogin extends HttpServlet {
         if (user != null && user.getPassword().equals(password)) {
             HttpSession session = request.getSession(true);
             session.setAttribute("userId", user.getId());
+            session.setAttribute("access", user.getAccess().toString());
 
             UserLog userLog = new UserLog();
             userLog.passwordUrl = "cabinet.jsp";

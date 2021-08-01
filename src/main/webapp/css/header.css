@@ -3,7 +3,7 @@ body {
 }
 
 #wrapper {
-    padding: 90px 15px;
+    padding: 60px 15px;
 }
 
 .navbar-expand-lg .navbar-nav.side-nav {
@@ -26,7 +26,6 @@ body {
 
 @media (min-width: 992px) {
     .leftmenutrigger {
-        display: block;
         display: block;
         margin: 7px 20px 4px 0;
         cursor: pointer;
@@ -61,4 +60,8 @@ body {
     -o-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out
+}
+
+div.container-fluid {
+    min-height: 300px !important;
 }

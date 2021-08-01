@@ -1,8 +1,6 @@
 package dao.impl;
 
 import dao.BucketDao;
-import dao.service.BucketService;
-import dao.service.implService.BucketServiceImpl;
 import domain.Bucket;
 
 import org.apache.log4j.Logger;
@@ -38,8 +36,8 @@ public class BucketDaoImpl implements BucketDao {
         try {
             preparedStatement = connection.prepareStatement(CREATE, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1,bucket.getUserId());
-            preparedStatement.setInt(2,bucket.getProductId());
-            preparedStatement.setDate(3,new Date(bucket.getPuchaseDate().getTime()));
+            preparedStatement.setInt(2, bucket.getProductId());
+            preparedStatement.setDate(3, new Date(bucket.getPurchaseDate().getTime()));
             preparedStatement.executeUpdate();
             ResultSet rs = preparedStatement.getGeneratedKeys();
             rs.next();

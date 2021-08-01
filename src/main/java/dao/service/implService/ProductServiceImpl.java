@@ -4,9 +4,13 @@ import dao.impl.ProductDaoImpl;
 import dao.service.ProductService;
 import domain.Product;
 import org.apache.log4j.Logger;
+
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class ProductServiceImpl implements ProductService {
     private static Logger LOGGER= Logger.getLogger(ProductServiceImpl.class);
@@ -61,5 +65,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> readAll() {
         return productDao.readAll();
+    }
+
+    @Override
+    public Map<Integer, Product> readAllMap() {
+        List<Product> products = readAll();
+        return products.stream().collect(Collectors.toMap(Product::getId, Function.identity()));
     }
 }
