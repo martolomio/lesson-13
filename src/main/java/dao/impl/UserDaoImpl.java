@@ -1,11 +1,9 @@
 package dao.impl;
 
 import dao.UserDoa;
-import domain.Product;
 import domain.User;
 import org.apache.log4j.Logger;
 import utils.ConnectionUtil;
-
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

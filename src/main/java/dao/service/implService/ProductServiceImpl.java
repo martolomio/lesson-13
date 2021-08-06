@@ -4,7 +4,6 @@ import dao.impl.ProductDaoImpl;
 import dao.service.ProductService;
 import domain.Product;
 import org.apache.log4j.Logger;
-
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.List;

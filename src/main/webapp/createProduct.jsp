@@ -1,54 +1,63 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="utf-8" %>
-
-<!doctype html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
+    <meta charset="ISO-8859-1">
+    <title>Cabinet</title>
+
+
+    <%--    <link rel="stylesheet"--%>
+    <%--          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"--%>
+    <%--          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"--%>
+    <%--          crossorigin="anonymous">--%>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
           crossorigin="anonymous">
-    <%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"--%>
-    <%--          rel="stylesheet"--%>
-    <%--          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"--%>
+    <%--    <link rel="stylesheet"--%>
+    <%--          href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"--%>
+    <%--          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"--%>
     <%--          crossorigin="anonymous">--%>
-    <link href="css/login.css" rel="stylesheet">
-    <title>I-store</title>
+    <link rel="stylesheet" href="css/createProduct.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
+<h1>Welcome to the cabinet ${userEmail}</h1>
+<jsp:include page="header.jsp"></jsp:include>
 
+<div class="container-fluid" style="width: 300px;
+    background-color: cadetblue;
+    border-radius: 9px;
+    padding-left: 60px;
+    height: 250px;
+    padding-top: 30px;">
+    <div class="row">
+        <form class="createProduct">
+            <div class="form-group">
+                <input type="text" name="name" class="form-control name"
+                       placeholder="Enter name of product" value="">
+            </div>
 
-<div class="login-page">
-    <div class="form">
-        <form class="register-form">
-            <input class="firstName" type="text" placeholder="first name"/>
-            <input class="lastName" type="text" placeholder="last name"/>
-            <input class="email" type="text" placeholder="email"/>
-            <input class="password" type="password" placeholder="password"/>
-            <input class="cpassword" type="password" placeholder="confirm password"/>
+            <div class="form-group">
+                <input type="text" name="description" class="form-control description"
+                       placeholder="Description" value="">
+            </div>
 
-            <button class="register">create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
+            <div class="form-group">
+                <input type="number" name="price" class="form-control price"
+                       placeholder="Price" value="">
+            </div>
+
+            <button class="btn btn-primary createProduct" style="background-color: darkslategray;">Submit</button>
         </form>
-        <form class="login-form">
-            <input class="email" type="text" placeholder="email"/>
-            <input class="password" type="password" placeholder="password"/>
-            <button class="login">login</button>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
-        </form>
+
     </div>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <b>success</b> You are registered.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
 </div>
-<jsp:include page="footer.jsp"></jsp:include>
 
+<jsp:include page="footer.jsp"></jsp:include>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -61,7 +70,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
-
 
 <%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"--%>
 <%--        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"--%>
@@ -76,8 +84,7 @@
 <%--        crossorigin="anonymous"></script>--%>
 <%--<script--%>
 <%--        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>--%>
-
-<script src="js/login.js"></script>
-
+<script src="js/header.js"></script>
+<script src="js/serverCalls.js"></script>
 </body>
 </html>

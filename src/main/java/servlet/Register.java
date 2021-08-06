@@ -1,4 +1,4 @@
-package testservelet;
+package servlet;
 
 import dao.service.UserService;
 import dao.service.implService.UserServiceImpl;
@@ -29,7 +29,7 @@ public class Register extends HttpServlet {
         if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
             userService.create(new User(firstName, lastName, email, password, UserAccess.USER.toString()));
         }
-        response.setContentType("text/plain");
+        response.setContentType("text/text");
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write("Success");
 
