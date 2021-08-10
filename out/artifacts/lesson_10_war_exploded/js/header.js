@@ -20,3 +20,17 @@ $("button.product-Logout")
             });
 
         });
+var userAccess = null;
+$(document).ready(function () {
+    $.get("user-role", function (data) {
+        if (data !== '') {
+            userAccess = data;
+        }
+    }).done(function () {
+        if (userRole === 'ADMINISTRATOR') {
+            $('li.user-bucket-option').hide();
+        } else {
+            $('li.create-product-option').hide();
+        }
+    });
+});

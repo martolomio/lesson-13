@@ -22,7 +22,7 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item create-product-option">
                     <a class="nav-link" href="${pageContext.request.contextPath}/createProduct.jsp">Add Periodical</a>
                 </li>
                 <li class="nav-item">
