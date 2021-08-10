@@ -1,10 +1,18 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="lesson-10:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/lesson_10_war_exploded</output-path>
+  <artifact type="exploded-war" name="lesson-13:war exploded">
+    <output-path>$PROJECT_DIR$/target/lesson-13_JA-0.0.1-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>lesson-13</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="lesson-10" />
+          <element id="module-output" name="lesson-13" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: junit:junit:4.12" />
@@ -15,10 +23,15 @@
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.7" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="lesson-10/web/Web" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/lesson-13_JA-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="lesson-13/web/Web" />
     </root>
   </artifact>
 </component>
