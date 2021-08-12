@@ -11,26 +11,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BucketServiceImpl implements BucketService {
-    private static Logger LOGGER= Logger.getLogger(BucketServiceImpl.class);
+
     private BucketDao bucketDao;
     private static BucketServiceImpl bucketServiceImpl;
 
     private BucketServiceImpl(){
-        try {
             bucketDao = new BucketDaoImpl();
-        } catch (SQLException throwables) {
-            LOGGER.error(throwables);
-        } catch (ClassNotFoundException e) {
-            LOGGER.error(e);
-        } catch (InvocationTargetException e) {
-            LOGGER.error(e);
-        } catch (InstantiationException e) {
-            LOGGER.error(e);
-        } catch (IllegalAccessException e) {
-            LOGGER.error(e);
-        } catch (NoSuchMethodException e) {
-            LOGGER.error(e);
-        }
+
     }
     public static BucketService getBucketService() {
         if (bucketServiceImpl == null) {
@@ -46,7 +33,7 @@ public class BucketServiceImpl implements BucketService {
     }
 
     @Override
-    public Bucket read(Integer id) throws SQLException {
+    public Bucket read(Integer id){
         return bucketDao.read(id);
     }
 

@@ -14,8 +14,7 @@ import java.sql.SQLException;
 
 @WebServlet("/product")
 public class ProductController extends HttpServlet {
-    private static Logger LOGGER = Logger.getLogger(ProductServiceImpl.class);
-    private static final long serialVersionUID = 1L;
+
     private ProductService productService = ProductServiceImpl.getProductService();
 
 
@@ -49,8 +48,8 @@ public class ProductController extends HttpServlet {
 
             request.setAttribute("product", product);
             request.getRequestDispatcher("singleProduct.jsp").forward(request, response);
-        } catch (SQLException e) {
-            LOGGER.error(e);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }

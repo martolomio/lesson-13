@@ -1,13 +1,21 @@
 package domain;
 
+import javax.persistence.*;
 import java.util.Objects;
-
+@Entity
+@Table(name = "product")
 public class Product {
-
+    @Id
+    @GeneratedValue
     private Integer id;
+    @Column
     private String name;
+    @Column
     private String description;
+    @Column
     private Double price;
+
+    public Product(){};
 
     public Product( String  name ,String description, Double price) {
         this.name = name;

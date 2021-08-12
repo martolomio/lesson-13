@@ -1,14 +1,29 @@
 package domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name = "user")
 public class User {
+	@Id
+	@Column(name="id")
 	private int id;
+	@Column(name="firstName")
 	private String firstName;
+	@Column(name="lastName")
 	private String lastName;
+	@Column
 	private String email;
+	@Column(name="password")
 	private String password;
-	private String  access;
+	@Column(name="access")
+	private String access;
+
+	public User(){};
 
 	public User(String firstName, String lastName,  String email, String password,
 				String access) {

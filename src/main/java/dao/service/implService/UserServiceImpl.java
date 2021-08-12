@@ -11,26 +11,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private static Logger LOGGER= Logger.getLogger(ProductServiceImpl.class);
+
     private UserDoa userDao;
     private  static UserServiceImpl userServiceImpl;
 
     private  UserServiceImpl(){
-        try {
             userDao = new UserDaoImpl();
-        } catch (SQLException throwables) {
-            LOGGER.error(throwables);
-        } catch (ClassNotFoundException e) {
-            LOGGER.error(e);
-        } catch (InvocationTargetException e) {
-            LOGGER.error(e);
-        } catch (InstantiationException e) {
-            LOGGER.error(e);
-        } catch (IllegalAccessException e) {
-            LOGGER.error(e);
-        } catch (NoSuchMethodException e) {
-            LOGGER.error(e);
-        }
+
     }
 
     @Override
@@ -39,7 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User read(Integer id) throws SQLException {
+    public User read(Integer id) {
         return userDao.read(id);
     }
 
